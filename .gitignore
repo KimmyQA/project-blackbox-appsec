@@ -231,3 +231,36 @@ charles_backup*
 
 # Ignore local environmental state capture notes
 *.log
+# ==========================================
+# Standard Python Environment Rules
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+ENV/
+env/
+
+# ==========================================
+# Charles Proxy Data Filter Rules
+# ==========================================
+# Ignore raw Charles session export captures
+*.chls
+*.chlsx
+*.xml
+
+# Ignore local configuration backups and auto-saves
+.charles/
+charles-config.xml
+charles_backup*
+
+# Ignore local environmental state capture notes
+*.log
+
+# ==========================================
+# Operating System Junk
+# ==========================================
+.DS_Store
+Thumbs.db
