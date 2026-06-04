@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org",
+  "project_name": "Project BlackBox: API Traffic Audit",
+  "tool_used": "Charles Proxy v4.6",
+  "target_application": "Enterprise Mobile Banking Mock-App",
+  "intercepted_traffic": [
+    {
+      "request_id": "REQ-0092-HTTPS",
+      "method": "GET",
+      "url": "https://mockbank.com",
+      "headers": {
+        "Host": "://mockbank.com",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+        "User-Agent": "MockBankAndroid/4.2.1"
+      },
+      "security_finding": {
+        "vulnerability_type": "OWASP Top 10 API1:2023 - Broken Object Level Authorization (BOLA)",
+        "risk_level": "HIGH",
+        "exploit_mechanism": "By modifying the 'account_id' URL parameter in Charles Proxy from 98711 to 98712, the server returned full profile data of a different user without re-authenticating the bearer token.",
+        "remediation_strategy": "Implement strict server-side access control validation ensuring the authenticated context matches the requested resource entity ID."
+      }
+    }
+  ]
+}
